@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify, render_template
 from groq import Groq
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-app = Flask(__name__)
-client = Groq(api_key="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")
+client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
 ιστορικό = [
     {
