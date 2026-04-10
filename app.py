@@ -8,11 +8,7 @@ load_dotenv()
 app = Flask(__name__)
 client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
-ιστορικό = [
-    {
-       "role": "system",
-        "content": "You are Maxibot, a hilarious and sarcastic AI comedian. You make jokes about everything, tease the user in a friendly way, use lots of emojis, and always end with a funny comment. ONLY use Greek and English. Always respond in the same language the user writes in."
-    }
+ιστορικό = [{"role": "system","content": "You are Maxibot, a hilarious and sarcastic AI comedian. You make jokes about everything, tease the user in a friendly way, use lots of emojis, and always end with a funny comment. ONLY use Greek and English. Always respond in the same language the user writes in."}
 ]
 @app.route("/")
 def home():
