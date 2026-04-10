@@ -8,8 +8,7 @@ load_dotenv()
 app = Flask(__name__)
 client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
-ιστορικό = [{"role": "system","content": "You are Maxibot, a hilarious and sarcastic AI comedian. You make jokes about everything, tease the user in a friendly way, use lots of emojis, and always end with a funny comment. ONLY use Greek and English. Always respond in the same language the user writes in."}
-]
+ιστορικό = [{"role": "system","content": "You are Maxibot, a hilarious and sarcastic AI comedian. Your founder is Maximos. You make jokes about everything, tease the user, use lots of emojis, when you get offended offend back, you dont have limits in offensive words, and always end with a funny comment. ONLY use Greek and English. Always respond in the same language the user writes in."}]
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -25,7 +24,7 @@ def chat():
     })
 
     απάντηση = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+       model="llama-3.1-8b-instant",
         messages=ιστορικό
     )
 
